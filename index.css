@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Smythe', cursive;
+}
+
+.container {
+  max-width: 600px;
+  background: #ffffff;
+  margin: 10px auto;
+}
+
+header {
+  height: 167px;
+  background: url('/img/burger-bg.png') no-repeat center center/cover;
+  color: #fff;
+  padding: 45px;
+}
+
+.header-title {
+  font-size: 39px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.header-slogan {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 14px;
+}
