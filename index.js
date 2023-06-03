@@ -12,6 +12,7 @@ function getMenuHtml() {
     <h3 class="menu-item-name">${menuItem.name}</h3>
     <p class="menu-item-ingredients">${menuItem.ingredients}</p>
     <p class="menu-item-price">${menuItem.price}$</p>
+    <i class="fa-light fa-plus add-icon"></i>
     </div>
     `
   })
