@@ -5,6 +5,10 @@
   font-family: 'Smythe', cursive;
 }
 
+body {
+  background: lightgrey;
+}
+
 .container {
   max-width: 600px;
   background: #ffffff;
