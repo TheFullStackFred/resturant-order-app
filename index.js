@@ -1,5 +1,7 @@
 import { menuArray } from './data.js'
 
+let cart = []
+
 document.addEventListener('click', function (event) {
   if (event.target.dataset.add) {
     addToCart(event.target.dataset.add)
@@ -7,7 +9,11 @@ document.addEventListener('click', function (event) {
 })
 
 function addToCart(itemId) {
-  console.log(itemId)
+  let addedItem = menuArray.filter(function (item) {
+    return item.id === Number(itemId)
+  })[0]
+
+  cart.push(addedItem)
 }
 
 function getMenuHtml() {
