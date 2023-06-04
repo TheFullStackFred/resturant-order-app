@@ -3,18 +3,21 @@ import { menuArray } from './data.js'
 function getMenuHtml() {
   let menuHtml = ''
 
-  menuArray.forEach(function (menuItem) {
-    console.log(menuItem)
-
+  menuArray.forEach(function (item) {
     menuHtml += `
-    <div class="menu-item-container">
-    <h2 class="menu-item-emoji">${menuItem.emoji}</h2>
-    <h3 class="menu-item-name">${menuItem.name}</h3>
-    <p class="menu-item-ingredients">${menuItem.ingredients}</p>
-    <p class="menu-item-price">${menuItem.price}$</p>
-    <i class="fa-light fa-plus add-icon"></i>
-    </div>
-    `
+    <div class="menu-item">
+        <div class="menu-info">
+            <div class="item-emoji">
+                ${item.emoji}
+            </div>
+            <div>
+                <p class="item-name">${item.name}</p>
+                <p class="item-ingredients">${item.ingredients}</p>
+                <p class="item-price">$${item.price}</p>
+            </div>
+        </div>
+<button class="add-btn">+</button>
+    </div>`
   })
   return menuHtml
 }
