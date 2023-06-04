@@ -11,6 +11,7 @@ body {
 
 .container {
   max-width: 600px;
+  height: 1161px;
   background: #ffffff;
   margin: 10px auto;
 }
@@ -74,4 +75,9 @@ header {
   padding: 25px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
+}
+
+.order-title {
+  text-align: center;
+  margin-top: 45px;
 }

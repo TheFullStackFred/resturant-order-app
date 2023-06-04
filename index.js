@@ -14,6 +14,18 @@ function addToCart(itemId) {
   })[0]
 
   cart.push(addedItem)
+  renderCart(cart)
+}
+
+function renderCart(cartItems) {
+  let cartHtml = ''
+  cartHtml += '<h2 class="order-title">Your order</h2>'
+
+  cartItems.forEach(function (item) {
+    cartHtml += `<p>${item.name}</p>`
+  })
+
+  document.getElementById('order').innerHTML = cartHtml
 }
 
 function getMenuHtml() {
