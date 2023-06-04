@@ -1,5 +1,15 @@
 import { menuArray } from './data.js'
 
+document.addEventListener('click', function (event) {
+  if (event.target.dataset.add) {
+    addToCart(event.target.dataset.add)
+  }
+})
+
+function addToCart(itemId) {
+  console.log(itemId)
+}
+
 function getMenuHtml() {
   let menuHtml = ''
 
@@ -16,7 +26,7 @@ function getMenuHtml() {
                 <p class="item-price">$${item.price}</p>
             </div>
         </div>
-<button class="add-btn">+</button>
+<button class="add-btn" data-add="${item.id}">+</button>
     </div>`
   })
   return menuHtml
