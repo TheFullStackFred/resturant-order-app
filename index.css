@@ -79,5 +79,21 @@ header {
 
 .order-title {
   text-align: center;
-  margin-top: 45px;
+  margin: 45px 0;
+}
+
+.order-items {
+  border-bottom: 2px solid #393333;
+}
+
+.order-item {
+  display: flex;
+  margin: 0 45px 20px 45px;
+}
+
+.remove-btn {
+  border: none;
+  background: #fff;
+  color: #bbbbbb;
+  margin-left: 12px;
 }

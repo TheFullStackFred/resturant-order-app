@@ -8,6 +8,16 @@ document.addEventListener('click', function (event) {
   }
 })
 
+function totalPrice() {
+  let total = 0
+
+  cart.forEach(function (item) {
+    total += item.price
+    console.log(total)
+  })
+  return total
+}
+
 function addToCart(itemId) {
   let addedItem = menuArray.filter(function (item) {
     return item.id === Number(itemId)
@@ -22,10 +32,15 @@ function renderCart(cartItems) {
   cartHtml += '<h2 class="order-title">Your order</h2>'
 
   cartItems.forEach(function (item) {
-    cartHtml += `<p>${item.name}</p>`
+    cartHtml += `
+    <div class="order-item">
+    <p class="item-name">${item.name}</p>
+    <button class="remove-btn">remove</button>
+    </div>
+    `
   })
 
-  document.getElementById('order').innerHTML = cartHtml
+  document.getElementById('order-items').innerHTML = cartHtml
 }
 
 function getMenuHtml() {
