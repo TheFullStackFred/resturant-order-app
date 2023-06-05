@@ -5,6 +5,8 @@ let cart = []
 document.addEventListener('click', function (event) {
   if (event.target.dataset.add) {
     addToCart(event.target.dataset.add)
+  } else if (event.target.dataset.remove) {
+    removeFromCart(event.target.dataset.remove)
   }
 })
 
@@ -16,6 +18,14 @@ function totalPrice() {
     console.log(total)
   })
   return total
+}
+
+function removeFromCart(itemId) {
+  cart = cart.filter(function (item) {
+    return item.id !== Number(itemId)
+  })
+  console.log(cart)
+  renderCart(cart)
 }
 
 function addToCart(itemId) {
@@ -35,7 +45,7 @@ function renderCart(cartItems) {
     cartHtml += `
     <div class="order-item">
     <p class="item-name">${item.name}</p>
-    <button class="remove-btn">remove</button>
+    <button class="remove-btn" data-remove="${item.id}">remove</button>
     </div>
     `
   })
