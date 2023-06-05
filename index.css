@@ -12,7 +12,9 @@ body {
 .container {
   max-width: 600px;
   background: #ffffff;
+  height: 1161px;
   margin: 10px auto;
+  overflow-y: auto;
 }
 
 header {
