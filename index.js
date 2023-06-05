@@ -39,11 +39,14 @@ function addToCart(itemId) {
 
 function renderCart(cartItems) {
   if (cartItems.length > 0) {
-    document.getElementById('order-items').classList.remove('hidden')
+    document.getElementById('order-items').style.display = 'block'
+    document.getElementById('total-price-section').style.display = 'flex'
+    document.getElementById('complete-order-section').style.display = 'block'
   } else {
-    document.getElementById('order-items').classList.add('hidden')
+    document.getElementById('order-items').style.display = 'none'
+    document.getElementById('total-price-section').style.display = 'none'
+    document.getElementById('complete-order-section').style.display = 'none'
   }
-
   let cartHtml = ''
   cartHtml += '<h2 class="order-title">Your order</h2>'
 
@@ -75,7 +78,7 @@ function renderCart(cartItems) {
   document
     .getElementById('complete-order-btn')
     .addEventListener('click', function () {
-      alert()
+      document.getElementById('modal').style.display = 'block'
     })
 }
 

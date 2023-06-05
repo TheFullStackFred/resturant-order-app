@@ -41,12 +41,22 @@
         class="complete-order-section"
       ></section>
     </div>
-    <form class="modal hidden">
+    <form id="modal" class="modal">
       <h2 class="modal-title">Enter card details</h2>
-      <div class="input-fields">
-        <input class="input" type="text" placeholder="Enter your name" />
-        <input class="input" type="text" placeholder="Enter card number" />
-        <input class="input" type="text" placeholder="Enter CVV" />
+      <div class="modal-input">
+        <input
+          class="input"
+          type="text"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          class="input"
+          type="number"
+          placeholder="Enter card number"
+          required
+        />
+        <input class="input" type="number" placeholder="Enter CVV" required />
         <button class="pay-btn btn">Pay</button>
       </div>
     </form>

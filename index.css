@@ -13,7 +13,6 @@ body {
   max-width: 600px;
   background: #ffffff;
   margin: 10px auto;
-  position: relative;
 }
 
 header {
@@ -83,6 +82,7 @@ header {
 }
 
 .order-items {
+  display: none;
   border-bottom: 2px solid #393333;
   margin: 0 45px;
 }
@@ -100,7 +100,7 @@ header {
 }
 
 .total-price-section {
-  display: flex;
+  display: none;
   justify-content: space-between;
   margin: 15px 45px 0 45px;
 }
@@ -129,15 +129,12 @@ header {
   margin-bottom: 30px;
 }
 
-.hidden {
-  display: none;
-}
-
 .modal {
+  display: none;
   width: 524px;
-  height: 542px;
+  height: 542.24px;
   background: #fff;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -145,6 +142,7 @@ header {
   margin: auto;
   border-radius: 3px;
   text-align: center;
+  filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
 }
 
 .modal-title {
@@ -155,10 +153,11 @@ header {
   margin: 45px 100px;
 }
 
-.input-fields {
-  width: 524px;
+.modal-input {
+  width: 475.91px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .input {
@@ -170,6 +169,19 @@ header {
   color: #757575;
   padding: 10px 0 10px 20px;
   margin-bottom: 20px;
+}
+
+/* Hide arrows from input type number */
+/* Works for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .pay-btn {
