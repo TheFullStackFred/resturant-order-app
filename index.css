@@ -84,6 +84,7 @@ header {
 
 .order-items {
   border-bottom: 2px solid #393333;
+  margin: 0 45px;
 }
 
 .order-item {
@@ -96,4 +97,8 @@ header {
   background: #fff;
   color: #bbbbbb;
   margin-left: 12px;
+}
+
+.hidden {
+  display: none;
 }

@@ -38,6 +38,12 @@ function addToCart(itemId) {
 }
 
 function renderCart(cartItems) {
+  if (cartItems.length > 0) {
+    document.getElementById('order-items').classList.remove('hidden')
+  } else {
+    document.getElementById('order-items').classList.add('hidden')
+  }
+
   let cartHtml = ''
   cartHtml += '<h2 class="order-title">Your order</h2>'
 
