@@ -15,7 +15,6 @@ function totalPrice() {
 
   cart.forEach(function (item) {
     total += item.price
-    console.log(total)
   })
   return total
 }
@@ -43,6 +42,14 @@ function renderCart(cartItems) {
   } else {
     document.getElementById('order-items').classList.add('hidden')
   }
+
+  const total = totalPrice()
+
+  let totalPriceHtml = ''
+  totalPriceHtml = `
+  <p class="total-price-text">Total price:</p><p class="total-price-text">$${total}</p>
+  `
+  document.getElementById('total-price-section').innerHTML = totalPriceHtml
 
   let cartHtml = ''
   cartHtml += '<h2 class="order-title">Your order</h2>'

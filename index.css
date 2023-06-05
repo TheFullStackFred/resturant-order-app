@@ -11,7 +11,6 @@ body {
 
 .container {
   max-width: 600px;
-  height: 1161px;
   background: #ffffff;
   margin: 10px auto;
 }
@@ -72,7 +71,7 @@ header {
   background: #fff;
   border: 1px solid #dedede;
   border-radius: 50%;
-  padding: 25px;
+  padding: 15px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
 }
@@ -84,7 +83,6 @@ header {
 
 .order-items {
   border-bottom: 2px solid #393333;
-  margin: 0 45px;
 }
 
 .order-item {
@@ -97,6 +95,17 @@ header {
   background: #fff;
   color: #bbbbbb;
   margin-left: 12px;
+}
+
+.total-price-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 45px 0 45px;
+}
+
+.total-price-text {
+  font-size: 28px;
+  display: inline-block;
 }
 
 .hidden {
