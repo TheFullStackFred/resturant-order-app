@@ -43,14 +43,6 @@ function renderCart(cartItems) {
     document.getElementById('order-items').classList.add('hidden')
   }
 
-  const total = totalPrice()
-
-  let totalPriceHtml = ''
-  totalPriceHtml = `
-  <p class="total-price-text">Total price:</p><p class="total-price-text">$${total}</p>
-  `
-  document.getElementById('total-price-section').innerHTML = totalPriceHtml
-
   let cartHtml = ''
   cartHtml += '<h2 class="order-title">Your order</h2>'
 
@@ -62,8 +54,22 @@ function renderCart(cartItems) {
     </div>
     `
   })
-
   document.getElementById('order-items').innerHTML = cartHtml
+
+  const total = totalPrice()
+  let totalPriceHtml = ''
+
+  totalPriceHtml = `
+  <p class="total-price-text">Total price:</p><p class="total-price-text">$${total}</p>
+  `
+  document.getElementById('total-price-section').innerHTML = totalPriceHtml
+
+  let completeOrderHtml = ''
+  completeOrderHtml = `
+  <button class="complete-order-btn">Complete order</button>
+  `
+  document.getElementById('complete-order-section').innerHTML =
+    completeOrderHtml
 }
 
 function getMenuHtml() {
