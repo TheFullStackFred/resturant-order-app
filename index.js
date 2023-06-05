@@ -67,7 +67,7 @@ function renderCart(cartItems) {
 
   let completeOrderHtml = ''
   completeOrderHtml = `
-  <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
+  <button id="complete-order-btn" class="btn">Complete order</button>
   `
   document.getElementById('complete-order-section').innerHTML =
     completeOrderHtml
