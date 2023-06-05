@@ -7,6 +7,8 @@ document.addEventListener('click', function (event) {
     addToCart(event.target.dataset.add)
   } else if (event.target.dataset.remove) {
     removeFromCart(event.target.dataset.remove)
+  } else if (event.target.dataset.complete) {
+    alert()
   }
 })
 
@@ -23,7 +25,6 @@ function removeFromCart(itemId) {
   cart = cart.filter(function (item) {
     return item.id !== Number(itemId)
   })
-  console.log(cart)
   renderCart(cart)
 }
 
@@ -49,8 +50,8 @@ function renderCart(cartItems) {
   cartItems.forEach(function (item) {
     cartHtml += `
     <div class="order-item">
-    <p class="item-name">${item.name}</p>
-    <button class="remove-btn" data-remove="${item.id}">remove</button>
+        <p class="item-name">${item.name}</p>
+        <button class="remove-btn" data-remove="${item.id}">remove</button>
     </div>
     `
   })
@@ -66,10 +67,16 @@ function renderCart(cartItems) {
 
   let completeOrderHtml = ''
   completeOrderHtml = `
-  <button class="complete-order-btn">Complete order</button>
+  <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
   `
   document.getElementById('complete-order-section').innerHTML =
     completeOrderHtml
+
+  document
+    .getElementById('complete-order-btn')
+    .addEventListener('click', function () {
+      alert()
+    })
 }
 
 function getMenuHtml() {
