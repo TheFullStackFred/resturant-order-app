@@ -3,7 +3,8 @@ import { menuArray } from './data.js'
 const orderItems = document.getElementById('order-items')
 const totalPriceSection = document.getElementById('total-price-section')
 const completeOrderSection = document.getElementById('complete-order-section')
-
+const orderMessageSection = document.getElementById('order-message-section')
+const modal = document.getElementById('modal')
 document.getElementById('pay-btn').addEventListener('click', handlePayment)
 
 let cart = []
@@ -18,14 +19,25 @@ document.addEventListener('click', function (event) {
   }
 })
 
-function handlePayment() {
+function handlePayment(e) {
+  e.preventDefault()
+
+  modal.style.display = 'none'
+  orderItems.style.display = 'none'
+  totalPriceSection.style.display = 'none'
+  completeOrderSection.style.display = 'none'
+
   const name = document.getElementById('name-input').value
 
   const orderMessageHtml = `
   <p>Thanks, ${name}! Your order is on its way!</p>
   `
+  orderMessageSection.style.display = 'block'
+  orderMessageSection.innerHTML = orderMessageHtml
 
-  document.getElementById('order-message').innerHTML = orderMessageHtml
+  setInterval(function () {
+    orderMessageSection.style.display = 'none'
+  }, 3000)
 }
 
 function totalPrice() {
@@ -94,7 +106,7 @@ function renderCart(cartItems) {
   document
     .getElementById('complete-order-btn')
     .addEventListener('click', function () {
-      document.getElementById('modal').style.display = 'block'
+      modal.style.display = 'block'
     })
 }
 

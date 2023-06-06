@@ -190,6 +190,14 @@ input[type='number'] {
   display: block;
 }
 
-.order-message {
-  /* display: none; */
+.order-message-section {
+  display: none;
+  background: #ecfdf5;
+  color: #065f46;
+  margin: 45px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 40px 0;
 }
