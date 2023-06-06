@@ -189,3 +189,7 @@ input[type='number'] {
 .pay-btn {
   display: block;
 }
+
+.order-message {
+  /* display: none; */
+}

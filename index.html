@@ -40,11 +40,13 @@
         id="complete-order-section"
         class="complete-order-section"
       ></section>
+      <section id="order-message" class="order-message"></section>
     </div>
     <form id="modal" class="modal">
       <h2 class="modal-title">Enter card details</h2>
       <div class="modal-input">
         <input
+          id="name-input"
           class="input"
           type="text"
           placeholder="Enter your name"
@@ -57,7 +59,7 @@
           required
         />
         <input class="input" type="number" placeholder="Enter CVV" required />
-        <button class="pay-btn btn">Pay</button>
+        <button id="pay-btn" class="pay-btn btn">Pay</button>
       </div>
     </form>
   </body>

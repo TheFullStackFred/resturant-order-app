@@ -1,5 +1,11 @@
 import { menuArray } from './data.js'
 
+const orderItems = document.getElementById('order-items')
+const totalPriceSection = document.getElementById('total-price-section')
+const completeOrderSection = document.getElementById('complete-order-section')
+
+document.getElementById('pay-btn').addEventListener('click', handlePayment)
+
 let cart = []
 
 document.addEventListener('click', function (event) {
@@ -11,6 +17,16 @@ document.addEventListener('click', function (event) {
     alert()
   }
 })
+
+function handlePayment() {
+  const name = document.getElementById('name-input').value
+
+  const orderMessageHtml = `
+  <p>Thanks, ${name}! Your order is on its way!</p>
+  `
+
+  document.getElementById('order-message').innerHTML = orderMessageHtml
+}
 
 function totalPrice() {
   let total = 0
@@ -39,13 +55,13 @@ function addToCart(itemId) {
 
 function renderCart(cartItems) {
   if (cartItems.length > 0) {
-    document.getElementById('order-items').style.display = 'block'
-    document.getElementById('total-price-section').style.display = 'flex'
-    document.getElementById('complete-order-section').style.display = 'block'
+    orderItems.style.display = 'block'
+    totalPriceSection.style.display = 'flex'
+    completeOrderSection.style.display = 'block'
   } else {
-    document.getElementById('order-items').style.display = 'none'
-    document.getElementById('total-price-section').style.display = 'none'
-    document.getElementById('complete-order-section').style.display = 'none'
+    orderItems.style.display = 'none'
+    totalPriceSection.style.display = 'none'
+    completeOrderSection.style.display = 'none'
   }
   let cartHtml = ''
   cartHtml += '<h2 class="order-title">Your order</h2>'
